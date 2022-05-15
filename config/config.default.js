@@ -5,7 +5,7 @@
  * @member Config#amqplibPlugin
  * @property {String} SOME_KEY - some description
  */
-exports.amqplib = {
+exports.amqplibPlugin = {
   app: true,
   agent: false,
   // url: 'amqp:localhost:5672'
