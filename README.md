@@ -34,7 +34,7 @@ $ npm i egg-amqplib-plugin --save
 
 ```js
 // {app_root}/config/plugin.js
-exports.rabbitmq = {
+exports.amqplib = {
   enable: true,
   package: 'egg-amqplib-plugin',
 };
@@ -48,10 +48,10 @@ exports.rabbitmq = {
 
 /**
  * egg-amqplib-plugin default config
- * @member Config#rabbitmq
+ * @member Config#amqplib
  * @property {String} SOME_KEY - some description
  */
-exports.rabbitmq = {
+exports.amqplib = {
   app: true,
   agent: false,
   // url: 'amqp:localhost'

@@ -2,10 +2,10 @@
 
 /**
  * egg-amqplib-plugin default config
- * @member Config#rabbitmq
+ * @member Config#amqplib
  * @property {String} SOME_KEY - some description
  */
-exports.rabbitmq = {
+exports.amqplib = {
   client: {
     // url: 'amqp:localhost:5672'
     options: {

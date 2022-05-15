@@ -48,7 +48,7 @@ Description here.
 
 ```js
 // config/plugin.js
-exports.rabbitmq = {
+exports.amqplib = {
   enable: true,
   package: 'egg-amqplib-plugin',
 };

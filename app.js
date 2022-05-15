@@ -18,9 +18,13 @@ function createClient(config, app) {
     app.coreLogger.info('[egg-amqplib-plugin] client connect success');
   });
 
-  client.on('close', err => {
+  client.on('error', err => {
     app.coreLogger.info('[egg-amqplib-plugin] client error: %s', err);
     app.coreLogger.error(err);
+  });
+
+  client.on('close', err => {
+    app.coreLogger.info('[egg-amqplib-plugin] client close: %s', err);
   });
 
   client.on('ch_open', () => {
