@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is egg rabbitmq plugin with amqplib",
   "eggPlugin": {
-    "name": "amqplib-plugin"
+    "name": "amqplibPlugin"
   },
   "keywords": [
     "egg",
