@@ -1,6 +1,6 @@
 {
   "name": "egg-amqplib-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is egg rabbitmq plugin with amqplib",
   "eggPlugin": {
     "name": "amqplibPlugin"
@@ -41,7 +41,6 @@
   },
   "files": [
     "app.js",
-    "agent.js",
     "lib",
     "index.d.ts"
   ],
