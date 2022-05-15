@@ -1,0 +1,61 @@
+{
+  "name": "egg-amqplib-plugin",
+  "version": "1.0.0",
+  "description": "This is egg rabbitmq plugin with amqplib",
+  "eggPlugin": {
+    "name": "amqplib-plugin"
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "amqplib",
+    "rabbitmq"
+  ],
+  "dependencies": {
+    "@types/amqplib": "^0.8.2",
+    "amqplib": "^0.9.0",
+    "bluebird": "^3.7.2"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg": "^2.16.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "autod": "autod"
+  },
+  "files": [
+    "app.js",
+    "agent.js",
+    "lib",
+    "index.d.ts"
+  ],
+  "ci": {
+    "version": "8, 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pengfeidai/egg-amqplib-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/pengfeidai/egg-amqplib-plugin/issues"
+  },
+  "homepage": "https://github.com/pengfeidai/egg-amqplib-plugin#readme",
+  "author": "302804389@qq.com",
+  "license": "MIT"
+}
