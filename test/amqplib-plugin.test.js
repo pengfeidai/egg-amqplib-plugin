@@ -15,6 +15,7 @@ describe('test/amqplib-plugin.test.js', () => {
   afterEach(mock.restore);
 
   it('should GET /', () => {
-    return app.httpRequest().get('/').expect('hi, amqplib').expect(200);
+    return app.httpRequest().get('/').expect('hi, amqplib')
+      .expect(200);
   });
 });
