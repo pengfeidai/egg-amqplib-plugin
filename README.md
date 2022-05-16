@@ -79,6 +79,47 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Example
 
+```javascript
+const Service = require('egg').Service;
+
+class AmqpService extends Service {
+  /**
+   * send message to rabbitMq
+   * @param {{ [key: string]: any; }} msg msg
+   * @param {'mining' | 'crowdfund'} type mining or crowdfund
+   * @return {Promise<boolean>} res
+   */
+  async send(msg, type) {
+    const { ctx, app, config } = this;
+    try {
+      msg = JSON.stringify(msg);
+
+      const {
+        source,
+        client: {
+          exchange: { name },
+        },
+      } = config.amqplib;
+      const routingKey = source[type];
+
+      if (!routingKey) {
+        ctx.logger.warn('unknown rabbitMq source type.');
+        return;
+      }
+      // 向交换机指定路由发送信息
+      app.amqplib.publish(name, routingKey, Buffer.from(msg));
+      ctx.logger.info(" [x] Sent %s:'%s' ", routingKey, msg);
+      return true;
+    } catch (err) {
+      ctx.logger.error('send rabbitMQ error:', err);
+      throw err;
+    }
+  }
+}
+
+module.exports = AmqpService;
+```
+
 <!-- example here -->
 
 ## Questions & Suggestions
