@@ -28,7 +28,7 @@
     "eslint-config-egg": "^7.1.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=14.0.0"
   },
   "scripts": {
     "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
@@ -46,7 +46,7 @@
     "index.d.ts"
   ],
   "ci": {
-    "version": "8, 10"
+    "version": "14, 16"
   },
   "repository": {
     "type": "git",
